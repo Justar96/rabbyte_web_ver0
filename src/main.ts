@@ -1,5 +1,5 @@
 import.meta
-import './style.scss'
+import './style.css'
 
 
 document.addEventListener('DOMContentLoaded', () => {

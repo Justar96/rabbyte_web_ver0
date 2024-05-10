@@ -217,29 +217,7 @@ html, body {
     animation-timeline: scroll();
   }
 
-  // .scroll-watcher::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   width: 100%;
-  //   background-color: var(--uib-color);
-  //   opacity: var(--uib-bg-opacity);
-  //   transition: background-color 0.3s ease;
-  // }
-
-  // .scroll-watcher::after {
-  //   content: '';
-  //   height: 100%;
-  //   width: 100%;
-  //   border-radius: calc(var(--uib-stroke) / 2);
-  //   animation: zoom var(--uib-speed) ease-in-out infinite;
-  //   transform: translateX(-100%);
-  //   background-color: var(--uib-color);
-  //   transition: background-color 0.3s ease;
-  // }
-
+ 
   @keyframes scroll-watcher {
     to {scale: 1 1;}
   }
