@@ -1,0 +1,10 @@
+{
+  "appId": "com.rabbyte8.app",
+  "appName": "rabbyte-web",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

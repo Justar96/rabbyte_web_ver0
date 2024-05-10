@@ -1,0 +1,272 @@
+html, body {
+  font-family: 'Dongle', sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.text-container {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  
+}
+
+.sec0 .animate {
+  font-size: 88px;
+  color: var(--color-white);
+  opacity: 0.8;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  transform: scale(5);
+  transition: 0.3s;
+}
+.sec0 .show-animate .animate {
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+:root {
+  --color-white: rgb(243, 243, 243);
+  --color-bg1: rgb(27, 27, 27);
+  --color-bg2: rgb(0, 0, 0);
+  --color1: 255, 175, 34;
+  --color2: 245, 76, 7;
+  --color3: 248, 163, 31;
+  --color4: 245, 76, 7;
+  --color5: 255, 118, 11 ;
+  --color-interactive: 245, 76, 7;
+  --circle-size: 70%;
+  --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+
+.gradient-bg {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+  
+  svg {
+    display: none;
+  }
+
+
+  .gradients-container {
+    filter: url(#goo) blur(50px) ;
+    
+    width: 100%;
+    height: 100vh;
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+  }
+
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+  }
+
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+  }
+
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+  }
+
+  .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+  }
+
+  .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 40%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+
+    opacity: 0.50;
+  }
+}
+
+  .scroll-watcher {
+    --uib-size: 500px;
+    --uib-color: var(--color-white);
+    --uib-speed: 1.4s;
+    --uib-stroke: 8px;
+    --uib-bg-opacity: .1;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--uib-stroke);
+    width: var(--uib-size);
+    border-radius: calc(var(--uib-stroke) / 2);
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+  }
+
+  // .scroll-watcher::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   background-color: var(--uib-color);
+  //   opacity: var(--uib-bg-opacity);
+  //   transition: background-color 0.3s ease;
+  // }
+
+  // .scroll-watcher::after {
+  //   content: '';
+  //   height: 100%;
+  //   width: 100%;
+  //   border-radius: calc(var(--uib-stroke) / 2);
+  //   animation: zoom var(--uib-speed) ease-in-out infinite;
+  //   transform: translateX(-100%);
+  //   background-color: var(--uib-color);
+  //   transition: background-color 0.3s ease;
+  // }
+
+  @keyframes scroll-watcher {
+    to {scale: 1 1;}
+  }
+
+  section .animate {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    font-size: 58px;
+    color: var(--color-white);
+    transform: scale(0.0);
+    transition: 0.7s;
+  }
+  section.show-animate .animate {
+    transition: 0.7s;
+    transform: scale(1.5);
+  }
+
+
+
+@keyframes reveal {
+  from{
+    background-position-x: 200%;
+  }
+  to {
+    background-position-x: 0%;
+  }
+}

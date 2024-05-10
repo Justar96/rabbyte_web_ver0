@@ -1,0 +1,32 @@
+{
+  "name": "rabbyte-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ldrs": "^1.0.1",
+    "pm2": "^5.3.1",
+    "process": "^0.11.10",
+    "require": "^0.4.4",
+    "start": "^5.1.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
